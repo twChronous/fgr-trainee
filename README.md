@@ -43,7 +43,7 @@
 | ----------------- | ------------------------------------------------------------------ |
 | Negativo (GND) | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
 | Positivo (VCC) | ![#FF0000](https://via.placeholder.com/10/FF00006?text=+) #FF0000 |
-
+...
 
 <!-- Env Variables -->
 ### :key: Variaveis do Ambiente
