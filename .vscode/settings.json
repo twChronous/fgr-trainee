@@ -1,3 +1,12 @@
 {
-    "C_Cpp.default.compilerPath": "C:/Users/LUCAS/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe"
+    "C_Cpp.default.compilerPath": "C:/Users/LUCAS/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+    "files.associations": {
+        ".fantomasignore": "ignore",
+        ".sequelizerc": "javascript",
+        ".stylelintrc": "json",
+        "*.tsx": "typescriptreact",
+        ".env.*": "dotenv",
+        ".prettierrc": "json",
+        "new": "cpp"
+    }
 }

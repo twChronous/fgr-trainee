@@ -1,0 +1,86 @@
+// Gyroscope.h
+#ifndef GYROSCOPE_H
+#define GYROSCOPE_H
+
+#include "Component.h"
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
+
+class Gyroscope : public Component {
+private:
+    Adafruit_MPU6050 mpu;
+
+public:
+    Gyroscope() {}
+
+    void setup() {
+        if (!mpu.begin()) {
+            Serial.println("Falha ao conectar o módulo");
+            while (1) {
+                delay(10);
+            }
+        }
+        Serial.println("Módulo conectado");
+
+        mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
+        mpu.setGyroRange(MPU6050_RANGE_500_DEG);
+        mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
+    }
+
+    void readData() {
+        sensors_event_t a, g, temp;
+        mpu.getEvent(&a, &g, &temp);
+
+        Serial.print("Aceleração X: ");
+        Serial.print(a.acceleration.x);
+        Serial.print(", Y: ");
+        Serial.print(a.acceleration.y);
+        Serial.print(", Z: ");
+        Serial.print(a.acceleration.z);
+        Serial.println(" m/s^2");
+
+        Serial.print("Rotação X: ");
+        Serial.print(g.gyro.x);
+        Serial.print(", Y: ");
+        Serial.print(g.gyro.y);
+        Serial.print(", Z: ");
+        Serial.print(g.gyro.z);
+        Serial.println(" rad/s");
+
+        String movement = detectMovementDirection(a.acceleration.x, a.acceleration.y, a.acceleration.z);
+        Serial.println(movement);
+
+        // Notifica o Mediator
+        if (mediator) {
+            mediator->notify(this, "GyroscopeRead", a.acceleration.x, a.acceleration.y, a.acceleration.z, g.gyro.x, g.gyro.y, g.gyro.z);
+        }
+    }
+
+    String detectMovementDirection(float accelX, float accelY, float accelZ) {
+        float threshold = 1.0; // Limite para detectar movimento
+        String Moviment = "";
+
+        if (accelY > threshold) {
+            Moviment = "Forward";
+        } else if (accelY < -threshold) {
+            Moviment = "Backward";
+        }
+
+        if (accelX > threshold) {
+            Moviment = "Right";
+        } else if (accelX < -threshold) {
+            Moviment = "Left";
+        }
+
+        if (accelZ > threshold) {
+            Moviment = "Up";
+        } else if (accelZ < -threshold) {
+            Moviment = "Down";
+        }
+
+        return Moviment;
+    }
+};
+
+#endif
