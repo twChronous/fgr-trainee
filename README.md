@@ -60,7 +60,7 @@ Para que você consiga compilar este código corretamente instale os seguintes p
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-* [✓] Código APPS
+* [x] Código APPS
 * [ ] Código Rede CAN
 * [ ] Código Giroscópio e acelerometro
 * [ ] Código LoRA
