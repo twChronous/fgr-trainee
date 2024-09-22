@@ -18,16 +18,18 @@ public:
         // float first_pot = (analogRead(pin_1) / 1023.0) * 100;
         // float second_pot = (analogRead(pin_2) / 1023.0) * 100;
         float first_pot = 50.0;
-        float second_pot = 40.0;
+        float second_pot = 90.0;
         // Calcula a diferença absoluta entre os dois potenciômetros
-        float value = abs(first_pot - second_pot);
+        float difference = abs(first_pot - second_pot);
 
-        if (value >= 10) {  // Se a diferença for significativa
-            lastValue = value;
-            if (mediator) {
-                // Notifica o Mediator sobre a mudança do potenciômetro, enviando os valores
-                mediator->notify(this, "PotentiometerChange", first_pot, second_pot);
+        if (mediator) {
+            if (difference >= 10) {  // Se a diferença for maior que 10%
+                lastValue = difference;
+                    // Notifica o Mediator sobre a diferença grande como implausibilidade
+                return mediator->notify(this, "implausibility");
             }
+                // Notifica o Mediator sobre a mudança do potenciômetro, enviando os valores
+            return mediator->notify(this, "PotentiometerChange", first_pot, second_pot);
         }
     }
 };

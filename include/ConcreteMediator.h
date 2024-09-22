@@ -45,6 +45,11 @@ public:
             canModule->sendMessage(message);
             loRaModule->sendMessage(message);
         }
+        if (event == "implausibility") {
+            String message = "KILL";
+            canModule->sendMessage(message);
+            loRaModule->sendMessage(message);
+        }
     }
 };
 
