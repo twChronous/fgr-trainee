@@ -45,17 +45,6 @@
 | Positivo (VCC) | ![#FF0000](https://via.placeholder.com/10/FF00006?text=+) #FF0000 |
 ...
 
-<!-- Env Variables -->
-### :key: Variaveis do Ambiente
-
-Para executar esse projeto corretamente confira se as variaveis de ambiente estão seguindo o padrão desejado
-verifique-as no seguinte diretorio `/include/CONFIG.h`
-
-`#define CAN_CS 10`
-
-`#define MAX_EVENTS 10`
-`#define MAX_LISTENERS 5`
-
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
 
@@ -71,7 +60,7 @@ Para que você consiga compilar este código corretamente instale os seguintes p
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-* [ ] Código APPS
+* [✓] Código APPS
 * [ ] Código Rede CAN
 * [ ] Código Giroscópio e acelerometro
 * [ ] Código LoRA
