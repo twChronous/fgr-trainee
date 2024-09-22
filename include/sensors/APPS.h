@@ -15,10 +15,8 @@ public:
 
     void readValue() {
         // Lê os valores dos potenciômetros e calcula a porcentagem
-        // float first_pot = (analogRead(pin_1) / 1023.0) * 100;
-        // float second_pot = (analogRead(pin_2) / 1023.0) * 100;
-        float first_pot = 50.0;
-        float second_pot = 90.0;
+        float first_pot = (analogRead(pin_1) / 1023.0) * 100;
+        float second_pot = (analogRead(pin_2) / 1023.0) * 100;
         // Calcula a diferença absoluta entre os dois potenciômetros
         float difference = abs(first_pot - second_pot);
 
