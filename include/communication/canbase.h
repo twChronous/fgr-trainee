@@ -1,4 +1,3 @@
-// CanModule.h
 #ifndef CANMODULE_H
 #define CANMODULE_H
 
@@ -9,6 +8,30 @@
 #define CAN_CS_PIN 10   // Defina o pino CS do MCP2515 (ajuste conforme necessário)
 MCP_CAN CAN0(CAN_CS_PIN);  // Instancia o objeto MCP_CAN com o pino CS
 
+/**
+ * @class CanModule
+ * @brief Uma classe para lidar com a comunicação CAN usando o módulo MCP2515.
+ * 
+ * Esta classe fornece métodos para inicializar o módulo CAN MCP2515 e enviar mensagens pelo barramento CAN.
+ * 
+ * 
+ * @fn CanModule::CanModule()
+ * @brief Construtor padrão para a classe CanModule.
+ * 
+ * @fn void CanModule::begin()
+ * @brief Inicializa o módulo CAN MCP2515 e o configura no modo normal.
+ * 
+ * Este método inicializa o módulo CAN MCP2515 com uma taxa de transmissão de 500kbps e o configura no modo normal,
+ * permitindo enviar e receber mensagens. Ele imprime o status da inicialização no monitor Serial.
+ * 
+ * @fn void CanModule::sendMessage(const String& message)
+ * @brief Envia uma mensagem pelo barramento CAN.
+ * 
+ * Este método divide a mensagem de entrada em pacotes de até 8 bytes e envia cada pacote pelo barramento CAN.
+ * Ele imprime o status de cada transmissão de pacote no monitor Serial.
+ * 
+ * @param message A mensagem em formato de string a ser enviada pelo barramento CAN.
+ */
 class CanModule : public Component {
 public:
     CanModule() {}
