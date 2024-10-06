@@ -18,8 +18,8 @@
  * dos dois percentuais. Se a diferença for maior ou igual a 10%, marca o valor como inválido.
  * Em seguida, a classe notifica um mediador sobre a alteração ou a implausibilidade.
  * 
- * @param pin_1 O pino analógico para o primeiro potenciômetro (0-5V).
- * @param pin_2 O pino analógico para o segundo potenciômetro (5-0V).
+ * @param pin_1 O pino analógico para o primeiro potenciômetro (0-3.3V).
+ * @param pin_2 O pino analógico para o segundo potenciômetro (0-5V).
  * 
  * 
  * @fn APPS::Potentiometer(int pin_1, int pin_2)
@@ -35,8 +35,8 @@
  */
 class Potentiometer : public Component {
 private:
-    int pin_1; // Pino analógico do potenciômetro 1 (0-5V)
-    int pin_2; // Pino analógico do potenciômetro 2 (5-0V)
+    int pin_1; // Pino analógico do potenciômetro 1 (0-3.3V).
+    int pin_2; // Pino analógico do potenciômetro 2 (0-5V)
 
 public:
     Potentiometer(int pin_1, int pin_2) : pin_1(pin_1), pin_2(pin_2) {}
@@ -46,8 +46,8 @@ public:
         int pot2Value = analogRead(pin_2);
 
         // Cálculo das porcentagens (de 0 a 100%)
-        float pot1Percent = (pot1Value / 1023.0) * 100.0;
-        float pot2Percent = (1.0 - (pot2Value / 1023.0)) * 100.0; // Invertendo o valor do segundo potenciômetro
+        float pot1Percent = (pot1Value / 675.0) * 100.0;
+        float pot2Percent = (pot2Value / 1023.0) * 100.0;
 
         // Calculando a diferença entre os dois potenciômetros
         float difference = abs(pot1Percent - pot2Percent);
