@@ -3,7 +3,9 @@
 
 #include "Component.h"
 #include "SoftwareSerial.h"
-SoftwareSerial loraSerial(2,3);
+#include "CONFIG.h"
+
+SoftwareSerial loraSerial(LORA_RX,LORA_TX);
 
 /**
  * @class LoRaModule

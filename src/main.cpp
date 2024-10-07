@@ -10,7 +10,7 @@ Gyroscope gyroscope;
 CanModule canModule;
 LoRaModule loRaModule;
 
-Potentiometer potentiometer(A0, A1);
+Potentiometer potentiometer;
 
 // Mediator que coordena os componentes
 ConcreteMediator mediator(&gyroscope, &canModule, &loRaModule, &potentiometer);
@@ -21,6 +21,7 @@ ConcreteMediator mediator(&gyroscope, &canModule, &loRaModule, &potentiometer);
  * Esta função configura a comunicação serial com uma taxa de transmissão de 115200,
  * configura o giroscópio e inicializa o módulo LoRa para comunicação.
  */
+
 void setup() {
     Serial.begin(115200);
 
@@ -28,6 +29,7 @@ void setup() {
     gyroscope.setup();
 
     loRaModule.begin();
+    //canModule.begin();
 }
 
 /**

@@ -1,6 +1,7 @@
 #ifndef APPS_H
 #define APPS_H
 
+#include "CONFIG.h"
 #include "Component.h"
 
 /**
@@ -34,16 +35,12 @@
  * A função então notifica um mediador sobre a alteração ou a implausibilidade.
  */
 class Potentiometer : public Component {
-private:
-    int pin_1; // Pino analógico do potenciômetro 1 (0-3.3V).
-    int pin_2; // Pino analógico do potenciômetro 2 (0-5V)
-
 public:
-    Potentiometer(int pin_1, int pin_2) : pin_1(pin_1), pin_2(pin_2) {}
+    Potentiometer();
 
     void readValue() {
-        int pot1Value = analogRead(pin_1);
-        int pot2Value = analogRead(pin_2);
+        int pot1Value = analogRead(POT_3V);
+        int pot2Value = analogRead(POT_5V);
 
         // Cálculo das porcentagens (de 0 a 100%)
         float pot1Percent = (pot1Value / 675.0) * 100.0;

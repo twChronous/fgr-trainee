@@ -2,10 +2,10 @@
 #define CANMODULE_H
 
 #include "Component.h"
+#include "CONFIG.h"
 #include <mcp_can.h>
 #include <SPI.h>
 
-#define CAN_CS_PIN 10   // Defina o pino CS do MCP2515 (ajuste conforme necessário)
 MCP_CAN CAN0(CAN_CS_PIN);  // Instancia o objeto MCP_CAN com o pino CS
 
 /**
