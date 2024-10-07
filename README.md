@@ -66,6 +66,8 @@ Para que você consiga compilar este código corretamente instale os seguintes p
  - [PlatformIo]('https://platformio.org/')
 
 
+Após isso confira se o arquivo CONFIG.h está configurado de acordo com seu projeto.
+
 <!-- Roadmap -->
 ## :compass: Roadmap
 
