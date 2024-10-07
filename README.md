@@ -43,7 +43,7 @@
 | ----------------- | ------------------------------------------------------------------ |-----------------|
 | Negativo (GND) | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 | GND |
 | Positivo (VCC) | ![#FF0000](https://via.placeholder.com/10/FF00006?text=+) #FF0000 | VCC (Lora 3v3)|
-| Sinal POT 1 (5-0v) | ![#7aff33](https://via.placeholder.com/10/7aff33?text=+) #7aff33 | A0 |
+| Sinal POT 1 (0-3.3v) | ![#7aff33](https://via.placeholder.com/10/7aff33?text=+) #7aff33 | A0 |
 | Sinal POT 2 (0-5v) | ![#cdcdcd](https://via.placeholder.com/10/cdcdcd?text=+) #cdcdcd | A1 |
 | SCL Gyro | ![#ffc32d](https://via.placeholder.com/10/ffc32d?text=+) #ffc32d | A5 (SCL) |
 | SDA Gyro | ![#b68302](https://via.placeholder.com/10/b68302?text=+) #b68302 | A4 (SDA)|
