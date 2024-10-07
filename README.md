@@ -72,7 +72,7 @@ Após isso confira se o arquivo CONFIG.h está configurado de acordo com seu pro
 ## :compass: Roadmap
 
 * [x] Código APPS
-* [ ] Código Rede CAN
-* [ ] Código Giroscópio e acelerometro
-* [ ] Código LoRA
+* [x] Código Rede CAN
+* [x] Código Giroscópio e acelerometro
+* [x] Código LoRA
 * [ ] Código GPS
